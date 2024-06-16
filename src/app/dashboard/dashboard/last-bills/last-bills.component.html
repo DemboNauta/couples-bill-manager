@@ -1,0 +1,14 @@
+<div class="list-group">
+    @for (bill of bills; track $index) {
+        <div class="list-group-item d-flex justify-content-between align-items-center">
+            <div class="d-flex flex-grow-1">
+                <span class="me-auto">{{ bill.name }}</span>
+                <span class="mx-5">{{ bill.price }}€</span>
+            </div>
+            <div>
+                <i class="bi bi-dash-circle text-danger"></i>
+            </div>
+        </div>
+    }
+    
+</div>
