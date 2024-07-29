@@ -1,27 +1,54 @@
-# CouplesBillsManager
+# Couples Bills Manager
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.2.
+Este proyecto es una aplicación Angular para la gestión de gastos compartidos entre parejas. La aplicación permite registrar, visualizar y analizar los gastos de manera eficiente.
 
-## Development server
+## Características
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Registro de gastos con nombre, categoría y monto.
+- Visualización de gastos en una tabla interactiva usando DataTables.
+- Ordenación y filtrado de gastos.
+- Integración con Bootstrap para una interfaz de usuario moderna y receptiva.
 
-## Code scaffolding
+## Tecnologías Utilizadas
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Angular
+- Angular DataTables
+- Bootstrap
+- RxJS
+- TypeScript
+- lxml (para el procesamiento de XML en Python)
 
-## Build
+## Instalación
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Sigue estos pasos para configurar y ejecutar el proyecto localmente:
 
-## Running unit tests
+### Requisitos Previos
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- Node.js y npm instalados en tu máquina.
+- Angular CLI instalado globalmente.
+- Python (para procesamiento de archivos XML).
 
-## Running end-to-end tests
+### Clonar el Repositorio
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+git clone https://github.com/tu-usuario/couples-bills-manager.git
+cd couples-bills-manager
 
-## Further help
+### Instalar Dependencias
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+npm install
+
+### Arrancar angular y fastAPI de python
+
+ng serve
+
+En la carpeta backend-couples-bills-manager --> fastapi dev main.py
+
+### Contribución
+Las contribuciones son bienvenidas. Si deseas contribuir, por favor sigue los siguientes pasos:
+
+Haz un fork del repositorio.
+
+Crea una nueva rama (git checkout -b feature/nueva-caracteristica).
+Realiza tus cambios y haz commit (git commit -m 'Añadir nueva característica').
+Empuja a la rama (git push origin feature/nueva-caracteristica).
+Abre un Pull Request.
