@@ -2,8 +2,8 @@
     <div class="list-group-item d-flex justify-content-between align-items-center bg-light">
         <div class="d-flex w-100">
             <span class="fw-bold w-50">Nombre</span>
+            <span class="fw-bold w-25 text-center">Categoría</span>
             <span class="fw-bold w-25 text-center">Precio</span>
-            <span class="fw-bold w-25 text-center">Fecha</span>
         </div>
         <div class="invisible">
             <i class="bi bi-dash-circle text-danger"></i>
@@ -12,9 +12,9 @@
     @for (bill of bills; track $index) {
         <div class="list-group-item d-flex justify-content-between align-items-center">
             <div class="d-flex w-100">
-                <span class="w-50">{{ bill.name }}</span>
-                <span class="w-25 text-center">{{ bill.price }}€</span>
-                <span class="w-25 text-center">{{ bill.date }}</span>
+                <span class="w-50">{{ bill[0] }}</span>
+                <span class="w-25 text-center">{{ bill[1] }}</span>
+                <span class="w-25 text-center">{{ bill[2] }}€</span>
             </div>
             <div>
                 <i class="bi bi-dash-circle text-danger"></i>

@@ -1,7 +1,7 @@
-<form action="" class="d-flex flex-column align-items-center border border-1 border-black rounded p-4 shadow-sm text-center">
+<form (submit)="onSubmit($event)" class="d-flex flex-column align-items-center border border-1 border-black rounded p-4 shadow-sm text-center">
     <div class="mb-3 w-100">
         <label for="ticketInput" class="form-label h4">Sube tu ticket</label>
-        <input class="form-control" type="file" id="ticketInput">
+        <input class="form-control" type="file" id="ticketInput" (change)="onFileChange($event)">
     </div>
     <button type="submit" class="btn btn-dark w-50">Enviar</button>
 </form>
