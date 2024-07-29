@@ -1,4 +1,4 @@
-<div class="list-group">
+<!-- <div class="list-group">
     <div class="list-group-item d-flex justify-content-between align-items-center bg-light">
         <div class="d-flex w-100">
             <span class="fw-bold w-50">Nombre</span>
@@ -21,4 +21,26 @@
             </div>
         </div>
     }
-</div>
+</div> -->
+
+<table  datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" id="billsTable" class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Categoría</th>
+            <th>Precio</th>
+            <th>Fecha</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (bill of bills; track $index) {
+            <tr>
+                <td>{{ bill[0] }}</td>
+                <td>{{ bill[1] }}</td>
+                <td>{{ bill[2] }}€</td>
+                <td>{{ bill[3] }}</td>
+            </tr>
+        }
+
+    </tbody>
+</table>
