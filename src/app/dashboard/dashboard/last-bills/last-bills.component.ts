@@ -27,7 +27,10 @@ export class LastBillsComponent implements OnInit {
     this.loadBills()
     this.dtOptions={
       pagingType: 'full_numbers',
-      pageLength: 25
+      pageLength: 25,
+      language: {
+      "url": "//cdn.datatables.net/plug-ins/1.10.15/i18n/Spanish.json"
+      }
     }
     
   }

@@ -16,7 +16,7 @@ Este proyecto es una aplicación Angular para la gestión de gastos compartidos 
 - Bootstrap
 - RxJS
 - TypeScript
-- lxml (para el procesamiento de XML en Python)
+- Python (usando lxml para el procesamiento de XML)
 
 ## Instalación
 
