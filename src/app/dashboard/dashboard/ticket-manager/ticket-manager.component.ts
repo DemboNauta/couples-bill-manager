@@ -25,7 +25,7 @@ export class TicketManagerComponent {
     if (this.ticketInput) {
       console.log('File to upload:', this.ticketInput);
       this.ticketService.uploadTicket(this.ticketInput).subscribe(
-        response => {
+        (response) => {
           console.log('Upload successful', response)
           this.gastos = response.gastos
           this.ticketService.updateGastos(response.gastos)

@@ -1,50 +1,53 @@
--- Reemplaza 'GestionGastosDB' por el nombre que desees para tu base de datos
-IF NOT EXISTS (SELECT * FROM sys.databases WHERE name = 'GestionGastosDB')
+-- Replace 'ExpenseManagementDB' with the desired name for your database
+IF NOT EXISTS (SELECT * FROM sys.databases WHERE name = 'ExpenseManagementDB')
 BEGIN
-    CREATE DATABASE GestionGastosDB;
+    CREATE DATABASE ExpenseManagementDB;
 END
 GO
 
--- Usar la base de datos recién creada
-USE GestionGastosDB;
+-- Use the newly created database
+USE ExpenseManagementDB;
 GO
 
--- Crear tabla Usuarios
-CREATE TABLE Usuarios (
+-- Create Users table
+CREATE TABLE Users (
     Id INT PRIMARY KEY IDENTITY(1,1),
     Username NVARCHAR(50) UNIQUE NOT NULL,
-    PasswordHash NVARCHAR(255) NOT NULL,
-    PasswordSalt NVARCHAR(255) NOT NULL,
     Email NVARCHAR(100) UNIQUE NOT NULL,
-    FechaRegistro DATETIME NOT NULL DEFAULT GETDATE(),
-    NombreCompleto NVARCHAR(100) NULL
+    RegistrationDate DATETIME NOT NULL DEFAULT GETDATE(),
 );
 
--- Crear tabla Categorias
-CREATE TABLE Categorias (
+CREATE TABLE Auth(
+	Email NVARCHAR(50) PRIMARY KEY,
+	PasswordHash VARBINARY(MAX),
+	PasswordSalt VARBINARY(MAX)
+)
+
+-- Create Categories table
+CREATE TABLE Categories (
     Id INT PRIMARY KEY IDENTITY(1,1),
-    Nombre NVARCHAR(50) UNIQUE NOT NULL,
-    Descripcion NVARCHAR(255) NULL
+    Name NVARCHAR(50) UNIQUE NOT NULL,
+    Description NVARCHAR(255) NULL
 );
 
--- Crear tabla Gastos
-CREATE TABLE Gastos (
+-- Create Expenses table
+CREATE TABLE Expenses (
     Id INT PRIMARY KEY IDENTITY(1,1),
-    UsuarioId INT NOT NULL,
-    CategoriaId INT NOT NULL,
-    Monto DECIMAL(18, 2) NOT NULL,
-    Descripcion NVARCHAR(255) NULL,
-    Fecha DATETIME NOT NULL DEFAULT GETDATE(),
-    FOREIGN KEY (UsuarioId) REFERENCES Usuarios(Id),
-    FOREIGN KEY (CategoriaId) REFERENCES Categorias(Id)
+    UserId INT NOT NULL,
+    CategoryId INT NOT NULL,
+    Amount DECIMAL(18, 2) NOT NULL,
+    Description NVARCHAR(255) NULL,
+    Date DATETIME NOT NULL DEFAULT GETDATE(),
+    FOREIGN KEY (UserId) REFERENCES Users(Id),
+    FOREIGN KEY (CategoryId) REFERENCES Categories(Id)
 );
 
--- Crear tabla ArchivosXML
-CREATE TABLE ArchivosXML (
+-- Create XMLFiles table
+CREATE TABLE XMLFiles (
     Id INT PRIMARY KEY IDENTITY(1,1),
-    UsuarioId INT NOT NULL,
-    NombreArchivo NVARCHAR(255) NOT NULL,
-    FechaCarga DATETIME NOT NULL DEFAULT GETDATE(),
-    ContenidoXML XML NOT NULL,
-    FOREIGN KEY (UsuarioId) REFERENCES Usuarios(Id)
+    UserId INT NOT NULL,
+    FileName NVARCHAR(255) NOT NULL,
+    UploadDate DATETIME NOT NULL DEFAULT GETDATE(),
+    XMLContent XML NOT NULL,
+    FOREIGN KEY (UserId) REFERENCES Users(Id)
 );

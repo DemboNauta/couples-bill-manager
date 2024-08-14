@@ -4,8 +4,8 @@
         <form action="" class="border border-1 border-black rounded p-4 shadow-sm w-50" (submit)="onLogin($event)" [formGroup]="loginForm">
             <h2 class="mb-4 text-center">Iniciar Sesión</h2>
             <div class="mb-3">
-                <label for="usuario" class="form-label">Usuario</label>
-                <input type="text" name="usuario" id="usuario" class="form-control" placeholder="Introduce tu usuario" required formControlName="userName">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" name="email" id="email" class="form-control" placeholder="Introduce tu email" required formControlName="email">
             </div>
             <div class="mb-3">
                 <label for="password" class="form-label">Contraseña</label>

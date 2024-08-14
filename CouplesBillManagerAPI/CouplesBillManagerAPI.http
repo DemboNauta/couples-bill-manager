@@ -1,6 +1,9 @@
 @CouplesBillManagerAPI_HostAddress = http://localhost:5000
 
+#Test connection
 GET {{CouplesBillManagerAPI_HostAddress}}/api/Expense/TestConnection
 Accept: application/json
 
 ###
+
+

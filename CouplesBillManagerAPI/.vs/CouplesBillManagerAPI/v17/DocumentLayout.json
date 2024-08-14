@@ -3,36 +3,44 @@
   "WorkspaceRootPath": "C:\\Users\\Edgar\\Documents\\couples-bill-manager\\couples-bill-manager\\CouplesBillManagerAPI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{757CFA74-EE3A-45FA-9CFD-BFEA00CA97A8}|CouplesBillManagerAPI.csproj|c:\\users\\edgar\\documents\\couples-bill-manager\\couples-bill-manager\\couplesbillmanagerapi\\couplesbillmanagerapi.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
-      "RelativeMoniker": "D:0:0:{757CFA74-EE3A-45FA-9CFD-BFEA00CA97A8}|CouplesBillManagerAPI.csproj|solutionrelative:couplesbillmanagerapi.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{757CFA74-EE3A-45FA-9CFD-BFEA00CA97A8}|CouplesBillManagerAPI.csproj|c:\\users\\edgar\\documents\\couples-bill-manager\\couples-bill-manager\\couplesbillmanagerapi\\controllers\\expensecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{757CFA74-EE3A-45FA-9CFD-BFEA00CA97A8}|CouplesBillManagerAPI.csproj|solutionrelative:controllers\\expensecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{757CFA74-EE3A-45FA-9CFD-BFEA00CA97A8}|CouplesBillManagerAPI.csproj|c:\\users\\edgar\\documents\\couples-bill-manager\\couples-bill-manager\\couplesbillmanagerapi\\data\\datacontextdapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{757CFA74-EE3A-45FA-9CFD-BFEA00CA97A8}|CouplesBillManagerAPI.csproj|solutionrelative:data\\datacontextdapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{757CFA74-EE3A-45FA-9CFD-BFEA00CA97A8}|CouplesBillManagerAPI.csproj|c:\\users\\edgar\\documents\\couples-bill-manager\\couples-bill-manager\\couplesbillmanagerapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{757CFA74-EE3A-45FA-9CFD-BFEA00CA97A8}|CouplesBillManagerAPI.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{757CFA74-EE3A-45FA-9CFD-BFEA00CA97A8}|CouplesBillManagerAPI.csproj|c:\\users\\edgar\\documents\\couples-bill-manager\\couples-bill-manager\\couplesbillmanagerapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{757CFA74-EE3A-45FA-9CFD-BFEA00CA97A8}|CouplesBillManagerAPI.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{757CFA74-EE3A-45FA-9CFD-BFEA00CA97A8}|CouplesBillManagerAPI.csproj|c:\\users\\edgar\\documents\\couples-bill-manager\\couples-bill-manager\\couplesbillmanagerapi\\dto\\userregisterdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{757CFA74-EE3A-45FA-9CFD-BFEA00CA97A8}|CouplesBillManagerAPI.csproj|solutionrelative:dto\\userregisterdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{757CFA74-EE3A-45FA-9CFD-BFEA00CA97A8}|CouplesBillManagerAPI.csproj|c:\\users\\edgar\\documents\\couples-bill-manager\\couples-bill-manager\\couplesbillmanagerapi\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{757CFA74-EE3A-45FA-9CFD-BFEA00CA97A8}|CouplesBillManagerAPI.csproj|solutionrelative:controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{757CFA74-EE3A-45FA-9CFD-BFEA00CA97A8}|CouplesBillManagerAPI.csproj|c:\\users\\edgar\\documents\\couples-bill-manager\\couples-bill-manager\\couplesbillmanagerapi\\dto\\userforloginconfirmationdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{757CFA74-EE3A-45FA-9CFD-BFEA00CA97A8}|CouplesBillManagerAPI.csproj|solutionrelative:dto\\userforloginconfirmationdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{757CFA74-EE3A-45FA-9CFD-BFEA00CA97A8}|CouplesBillManagerAPI.csproj|c:\\users\\edgar\\documents\\couples-bill-manager\\couples-bill-manager\\couplesbillmanagerapi\\dto\\userlogindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{757CFA74-EE3A-45FA-9CFD-BFEA00CA97A8}|CouplesBillManagerAPI.csproj|solutionrelative:dto\\userlogindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{757CFA74-EE3A-45FA-9CFD-BFEA00CA97A8}|CouplesBillManagerAPI.csproj|c:\\users\\edgar\\documents\\couples-bill-manager\\couples-bill-manager\\couplesbillmanagerapi\\helpers\\authhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{757CFA74-EE3A-45FA-9CFD-BFEA00CA97A8}|CouplesBillManagerAPI.csproj|solutionrelative:helpers\\authhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{757CFA74-EE3A-45FA-9CFD-BFEA00CA97A8}|CouplesBillManagerAPI.csproj|c:\\users\\edgar\\documents\\couples-bill-manager\\couples-bill-manager\\couplesbillmanagerapi\\helpers\\reusblesqlhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{757CFA74-EE3A-45FA-9CFD-BFEA00CA97A8}|CouplesBillManagerAPI.csproj|solutionrelative:helpers\\reusblesqlhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{757CFA74-EE3A-45FA-9CFD-BFEA00CA97A8}|CouplesBillManagerAPI.csproj|c:\\users\\edgar\\documents\\couples-bill-manager\\couples-bill-manager\\couplesbillmanagerapi\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{757CFA74-EE3A-45FA-9CFD-BFEA00CA97A8}|CouplesBillManagerAPI.csproj|solutionrelative:models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{757CFA74-EE3A-45FA-9CFD-BFEA00CA97A8}|CouplesBillManagerAPI.csproj|c:\\users\\edgar\\documents\\couples-bill-manager\\couples-bill-manager\\couplesbillmanagerapi\\models\\expense.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{757CFA74-EE3A-45FA-9CFD-BFEA00CA97A8}|CouplesBillManagerAPI.csproj|solutionrelative:models\\expense.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{757CFA74-EE3A-45FA-9CFD-BFEA00CA97A8}|CouplesBillManagerAPI.csproj|c:\\users\\edgar\\documents\\couples-bill-manager\\couples-bill-manager\\couplesbillmanagerapi\\dto\\userregisterdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{757CFA74-EE3A-45FA-9CFD-BFEA00CA97A8}|CouplesBillManagerAPI.csproj|solutionrelative:dto\\userregisterdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{757CFA74-EE3A-45FA-9CFD-BFEA00CA97A8}|CouplesBillManagerAPI.csproj|c:\\users\\edgar\\documents\\couples-bill-manager\\couples-bill-manager\\couplesbillmanagerapi\\couplesbillmanagerapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{757CFA74-EE3A-45FA-9CFD-BFEA00CA97A8}|CouplesBillManagerAPI.csproj|solutionrelative:couplesbillmanagerapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,110 +50,136 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ExpenseController.cs",
-              "DocumentMoniker": "C:\\Users\\Edgar\\Documents\\couples-bill-manager\\couples-bill-manager\\CouplesBillManagerAPI\\Controllers\\ExpenseController.cs",
-              "RelativeDocumentMoniker": "Controllers\\ExpenseController.cs",
-              "ToolTip": "C:\\Users\\Edgar\\Documents\\couples-bill-manager\\couples-bill-manager\\CouplesBillManagerAPI\\Controllers\\ExpenseController.cs",
-              "RelativeToolTip": "Controllers\\ExpenseController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAcAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-13T16:50:55.452Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\Edgar\\Documents\\couples-bill-manager\\couples-bill-manager\\CouplesBillManagerAPI\\appsettings.json",
-              "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "C:\\Users\\Edgar\\Documents\\couples-bill-manager\\couples-bill-manager\\CouplesBillManagerAPI\\appsettings.json",
-              "RelativeToolTip": "appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAA3AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-08-13T16:52:03.285Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "DataContextDapper.cs",
-              "DocumentMoniker": "C:\\Users\\Edgar\\Documents\\couples-bill-manager\\couples-bill-manager\\CouplesBillManagerAPI\\Data\\DataContextDapper.cs",
-              "RelativeDocumentMoniker": "Data\\DataContextDapper.cs",
-              "ToolTip": "C:\\Users\\Edgar\\Documents\\couples-bill-manager\\couples-bill-manager\\CouplesBillManagerAPI\\Data\\DataContextDapper.cs",
-              "RelativeToolTip": "Data\\DataContextDapper.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAFAAAA",
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\Edgar\\Documents\\couples-bill-manager\\couples-bill-manager\\CouplesBillManagerAPI\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\Edgar\\Documents\\couples-bill-manager\\couples-bill-manager\\CouplesBillManagerAPI\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "Controllers\\AuthController.cs",
+              "ViewState": "AQIAAEIAAAAAAAAAAAAkwFMAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-13T17:42:46.579Z",
+              "WhenOpened": "2024-08-14T06:20:42.98Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
+              "Title": "AuthHelper.cs",
+              "DocumentMoniker": "C:\\Users\\Edgar\\Documents\\couples-bill-manager\\couples-bill-manager\\CouplesBillManagerAPI\\Helpers\\AuthHelper.cs",
+              "RelativeDocumentMoniker": "Helpers\\AuthHelper.cs",
+              "ToolTip": "C:\\Users\\Edgar\\Documents\\couples-bill-manager\\couples-bill-manager\\CouplesBillManagerAPI\\Helpers\\AuthHelper.cs",
+              "RelativeToolTip": "Helpers\\AuthHelper.cs",
+              "ViewState": "AQIAADUAAAAAAAAAAAAYwEIAAAAGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-14T07:01:32.806Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ReusbleSqlHelper.cs",
+              "DocumentMoniker": "C:\\Users\\Edgar\\Documents\\couples-bill-manager\\couples-bill-manager\\CouplesBillManagerAPI\\Helpers\\ReusbleSqlHelper.cs",
+              "RelativeDocumentMoniker": "Helpers\\ReusbleSqlHelper.cs",
+              "ToolTip": "C:\\Users\\Edgar\\Documents\\couples-bill-manager\\couples-bill-manager\\CouplesBillManagerAPI\\Helpers\\ReusbleSqlHelper.cs",
+              "RelativeToolTip": "Helpers\\ReusbleSqlHelper.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAQwBYAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-14T06:56:15.759Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "UserRegisterDTO.cs",
+              "DocumentMoniker": "C:\\Users\\Edgar\\Documents\\couples-bill-manager\\couples-bill-manager\\CouplesBillManagerAPI\\DTO\\UserRegisterDTO.cs",
+              "RelativeDocumentMoniker": "DTO\\UserRegisterDTO.cs",
+              "ToolTip": "C:\\Users\\Edgar\\Documents\\couples-bill-manager\\couples-bill-manager\\CouplesBillManagerAPI\\DTO\\UserRegisterDTO.cs",
+              "RelativeToolTip": "DTO\\UserRegisterDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-14T06:50:51.868Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\Edgar\\Documents\\couples-bill-manager\\couples-bill-manager\\CouplesBillManagerAPI\\Models\\User.cs",
+              "RelativeDocumentMoniker": "Models\\User.cs",
+              "ToolTip": "C:\\Users\\Edgar\\Documents\\couples-bill-manager\\couples-bill-manager\\CouplesBillManagerAPI\\Models\\User.cs",
+              "RelativeToolTip": "Models\\User.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-14T06:46:06.453Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "CouplesBillManagerAPI",
+              "DocumentMoniker": "C:\\Users\\Edgar\\Documents\\couples-bill-manager\\couples-bill-manager\\CouplesBillManagerAPI\\CouplesBillManagerAPI.csproj",
+              "RelativeDocumentMoniker": "CouplesBillManagerAPI.csproj",
+              "ToolTip": "C:\\Users\\Edgar\\Documents\\couples-bill-manager\\couples-bill-manager\\CouplesBillManagerAPI\\CouplesBillManagerAPI.csproj",
+              "RelativeToolTip": "CouplesBillManagerAPI.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-08-14T06:33:08.784Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "UserLoginDTO.cs",
               "DocumentMoniker": "C:\\Users\\Edgar\\Documents\\couples-bill-manager\\couples-bill-manager\\CouplesBillManagerAPI\\DTO\\UserLoginDTO.cs",
               "RelativeDocumentMoniker": "DTO\\UserLoginDTO.cs",
               "ToolTip": "C:\\Users\\Edgar\\Documents\\couples-bill-manager\\couples-bill-manager\\CouplesBillManagerAPI\\DTO\\UserLoginDTO.cs",
               "RelativeToolTip": "DTO\\UserLoginDTO.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAjAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAoAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-13T16:38:40.321Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "UserRegisterDTO.cs",
-              "DocumentMoniker": "C:\\Users\\Edgar\\Documents\\couples-bill-manager\\couples-bill-manager\\CouplesBillManagerAPI\\DTO\\UserRegisterDTO.cs",
-              "RelativeDocumentMoniker": "DTO\\UserRegisterDTO.cs",
-              "ToolTip": "C:\\Users\\Edgar\\Documents\\couples-bill-manager\\couples-bill-manager\\CouplesBillManagerAPI\\DTO\\UserRegisterDTO.cs",
-              "RelativeToolTip": "DTO\\UserRegisterDTO.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-13T16:31:10.487Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "User.cs",
-              "DocumentMoniker": "C:\\Users\\Edgar\\Documents\\couples-bill-manager\\couples-bill-manager\\CouplesBillManagerAPI\\Models\\User.cs",
-              "RelativeDocumentMoniker": "Models\\User.cs",
-              "ToolTip": "C:\\Users\\Edgar\\Documents\\couples-bill-manager\\couples-bill-manager\\CouplesBillManagerAPI\\Models\\User.cs",
-              "RelativeToolTip": "Models\\User.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-13T16:30:14.955Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Expense.cs",
-              "DocumentMoniker": "C:\\Users\\Edgar\\Documents\\couples-bill-manager\\couples-bill-manager\\CouplesBillManagerAPI\\Models\\Expense.cs",
-              "RelativeDocumentMoniker": "Models\\Expense.cs",
-              "ToolTip": "C:\\Users\\Edgar\\Documents\\couples-bill-manager\\couples-bill-manager\\CouplesBillManagerAPI\\Models\\Expense.cs",
-              "RelativeToolTip": "Models\\Expense.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-13T16:21:22.158Z",
+              "DocumentIndex": 1,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Edgar\\Documents\\couples-bill-manager\\couples-bill-manager\\CouplesBillManagerAPI\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\Edgar\\Documents\\couples-bill-manager\\couples-bill-manager\\CouplesBillManagerAPI\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-08-14T08:00:02.379Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "CouplesBillManagerAPI.http",
-              "DocumentMoniker": "C:\\Users\\Edgar\\Documents\\couples-bill-manager\\couples-bill-manager\\CouplesBillManagerAPI\\CouplesBillManagerAPI.http",
-              "RelativeDocumentMoniker": "CouplesBillManagerAPI.http",
-              "ToolTip": "C:\\Users\\Edgar\\Documents\\couples-bill-manager\\couples-bill-manager\\CouplesBillManagerAPI\\CouplesBillManagerAPI.http",
-              "RelativeToolTip": "CouplesBillManagerAPI.http",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
-              "WhenOpened": "2024-08-13T15:51:18.062Z",
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Edgar\\Documents\\couples-bill-manager\\couples-bill-manager\\CouplesBillManagerAPI\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\Edgar\\Documents\\couples-bill-manager\\couples-bill-manager\\CouplesBillManagerAPI\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAACoAAAAAAAAAAAAowD0AAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-14T08:00:19.48Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UserForLoginConfirmationDTO.cs",
+              "DocumentMoniker": "C:\\Users\\Edgar\\Documents\\couples-bill-manager\\couples-bill-manager\\CouplesBillManagerAPI\\DTO\\UserForLoginConfirmationDTO.cs",
+              "RelativeDocumentMoniker": "DTO\\UserForLoginConfirmationDTO.cs",
+              "ToolTip": "C:\\Users\\Edgar\\Documents\\couples-bill-manager\\couples-bill-manager\\CouplesBillManagerAPI\\DTO\\UserForLoginConfirmationDTO.cs",
+              "RelativeToolTip": "DTO\\UserForLoginConfirmationDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-14T07:46:06.294Z",
               "EditorCaption": ""
             }
           ]

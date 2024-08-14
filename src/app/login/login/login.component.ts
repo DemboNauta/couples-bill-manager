@@ -17,7 +17,7 @@ export class LoginComponent {
 
   // Formulario de inicio de sesión con validadores
   loginForm = new FormGroup({
-    userName: new FormControl('', [Validators.required, Validators.minLength(4)]),
+    email: new FormControl('', [Validators.required, Validators.minLength(4)]),
     password: new FormControl('', [Validators.required, Validators.minLength(6)])
   });
 
@@ -38,7 +38,7 @@ export class LoginComponent {
     
     if (this.loginForm.valid) {
       const user: UserLogin = {
-        userName: this.loginForm.controls.userName.value!,
+        email: this.loginForm.controls.email.value!,
         password: this.loginForm.controls.password.value!
       };
       
