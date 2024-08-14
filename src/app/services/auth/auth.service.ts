@@ -27,4 +27,7 @@ export class AuthService {
   resetPassword(userLogin: UserLogin){
     this.http.put(`${environment.apiUrl}/auth/resetPassword`, userLogin)
   }
+  getToken(): string | null {
+    return localStorage.getItem('token');
+  }
 }

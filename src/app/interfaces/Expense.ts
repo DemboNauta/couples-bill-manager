@@ -2,8 +2,10 @@ export interface Expense
 {
     id: number,
     userId: number,
-    categoryId: number,
+    category: string,
     amount: number,
     description: string,
-    date: Date
+    date: Date,
+    transactionType: string
+
 }

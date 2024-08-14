@@ -4,6 +4,7 @@ import { TicketingService } from '../../../services/ticketing/ticketing.service'
 import { DataTablesModule } from 'angular-datatables';
 import { Config } from 'datatables.net';
 import { Subject } from 'rxjs';
+import { Expense } from '../../../interfaces/Expense';
 
 
 @Component({
@@ -16,7 +17,7 @@ import { Subject } from 'rxjs';
 })
 export class LastBillsComponent implements OnInit {
 
-  bills: string[] = [];
+  bills: Expense[] = [];
   dtOptions: Config={}
   dtTrigger: Subject<any> = new Subject<any>()
 

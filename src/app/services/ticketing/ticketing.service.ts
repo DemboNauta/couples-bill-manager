@@ -13,11 +13,14 @@ export class TicketingService {
   gastos = this.gastosSubject.asObservable();
   constructor(private http: HttpClient) { }
 
-  uploadTicket(file: File): Observable<any> {
+  uploadTicket(file: File) {
     const formData = new FormData();
     formData.append('file', file);
 
-    return this.http.post<any>(`${environment.apiUrl}/expense/upload`, formData);
+    this.http.post<any>(`${environment.apiUrl}/expense/upload`, formData).subscribe((res: {gastos: []})=>{
+      console.log(res.gastos)
+      this.updateGastos(rep.gastos)
+    });
   }
 
   updateGastos(newArray: any[]): void {
