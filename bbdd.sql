@@ -23,23 +23,17 @@ CREATE TABLE Auth(
 	PasswordSalt VARBINARY(MAX)
 )
 
--- Create Categories table
-CREATE TABLE Categories (
-    Id INT PRIMARY KEY IDENTITY(1,1),
-    Name NVARCHAR(50) UNIQUE NOT NULL,
-    Description NVARCHAR(255) NULL
-);
+
 
 -- Create Expenses table
 CREATE TABLE Expenses (
     Id INT PRIMARY KEY IDENTITY(1,1),
     UserId INT NOT NULL,
-    CategoryId INT NOT NULL,
+    Category NVARCHAR(255) NULL,
     Amount DECIMAL(18, 2) NOT NULL,
     Description NVARCHAR(255) NULL,
-    Date DATETIME NOT NULL DEFAULT GETDATE(),
+    Date NOT NULL DEFAULT,
     FOREIGN KEY (UserId) REFERENCES Users(Id),
-    FOREIGN KEY (CategoryId) REFERENCES Categories(Id)
 );
 
 -- Create XMLFiles table

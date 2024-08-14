@@ -42,9 +42,17 @@ export class LoginComponent {
         password: this.loginForm.controls.password.value!
       };
       
-      this.authService.login(user).subscribe((user: User) => {
-        this.loggedInUser = user;
-        this.router.navigate(['/dashboard']);
+      this.authService.login(user).subscribe((response) => {
+        const token = response.token
+        console.log(token)
+        this.loggedInUser = response.user;
+        console.log(this.loggedInUser)
+        if(this.loggedInUser){
+          this.authService.loggedInUser=response.user;
+          localStorage.setItem("token", response.token)
+          this.router.navigate(['/dashboard']);
+        }
+        
       }, error => {
         console.error('Login failed', error);
       });
@@ -70,9 +78,8 @@ export class LoginComponent {
         passwordConfirm: this.registerForm.controls.passwordConfirm.value!
       };
       
-      this.authService.register(newUser).subscribe((user: User) => {
-        console.log('Registro exitoso', user);
-        this.loggedInUser = user;
+      this.authService.register(newUser).subscribe(() => {
+        console.log('Registro exitoso');
         this.router.navigate(['/dashboard']);
       }, error => {
         console.error('Registro fallido', error);

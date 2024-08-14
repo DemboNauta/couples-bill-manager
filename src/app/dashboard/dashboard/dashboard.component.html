@@ -1,4 +1,7 @@
-<div class="container border-1 border-dark-subtle rounded border mt-2">
+@if(this.loggedInUser)
+{
+  <div class="container border-1 border-dark-subtle rounded border mt-2">
+    <h1>Bienvenid&#64; {{loggedInUser.userName}}</h1>
     <div class="p-4 d-flex justify-content-between">
       <div class="w-75 me-3">
         <app-item-form></app-item-form>
@@ -8,12 +11,12 @@
       </div>
     </div>
     <div class="p-4 d-flex justify-content-between">
-        <div class="w-75 me-3">
-            <app-last-bills></app-last-bills>
-          </div>
-          <div class="w-25">
-            
-          </div>
+      <div class="w-75 me-3">
+        <app-last-bills></app-last-bills>
+      </div>
+      <div class="w-25">
+
+      </div>
     </div>
   </div>
-  
+}

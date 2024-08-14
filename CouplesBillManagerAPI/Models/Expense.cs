@@ -1,13 +1,14 @@
 namespace CouplesBillManagerAPI.Models
 {
-  public partial class Expense
+  public class Expense
   {
-    public int Id { get; set; }
-    public int userId { get; set; }
-    public int categoryId { get; set; }
-    public decimal amount { get; set; }
-    public string description { get; set; } = "";
-    public DateTime date { get; set; }
+    public int UserId { get; set; }
+    public string Date { get; set; } = "";
+    public string Description { get; set; } = "";
+    public string Category { get; set; } = "";
+    public string Amount { get; set; } = "";
+    public string TransactionType { get; set; } = "";
+    public string AccountOrCard { get; set; } = "";
   }
 }
 

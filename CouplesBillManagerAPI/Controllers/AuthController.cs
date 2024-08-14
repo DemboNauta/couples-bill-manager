@@ -6,6 +6,7 @@ using Dapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Data;
+using System.Text.Json;
 
 namespace CouplesBillManagerAPI.Controllers
 {
@@ -86,14 +87,15 @@ namespace CouplesBillManagerAPI.Controllers
         }
       }
       string userIdSql = $@"
-                SELECT Id FROM Users WHERE Email = @EmailParam ";
+                SELECT * FROM Users WHERE Email = @EmailParam ";
       DynamicParameters getUserIdParams = new DynamicParameters();
       getUserIdParams.Add("@EmailParam", userLogin.Email, DbType.String);
 
-      int userId = _dapper.LoadDataSingleWithParameters<int>(userIdSql, getUserIdParams);
+      User userLogged = _dapper.LoadDataSingleWithParameters<User>(userIdSql, getUserIdParams);
 
-      return Ok(new Dictionary<string, string>{
-                {"token", _authHelper.CreateToken(userId)}
+      return Ok(new {
+                token = _authHelper.CreateToken(userLogged.Id),
+                user = userLogged
             });
     }
   }

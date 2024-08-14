@@ -10,11 +10,11 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthService {
-
+  loggedInUser : User | null = null;
   constructor(private http: HttpClient) {}
 
-  login(userLogin: UserLogin): Observable<User> {
-    return this.http.post<User>(`${environment.apiUrl}/auth/login`, userLogin);
+  login(userLogin: UserLogin): Observable<{token: string, user: User}> {
+    return this.http.post<{token: string, user: User}>(`${environment.apiUrl}/auth/login`, userLogin);
   }
 
   register(userRegister: UserRegister): Observable<User>{
