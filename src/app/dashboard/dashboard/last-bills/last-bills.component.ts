@@ -4,7 +4,7 @@ import { TicketingService } from '../../../services/ticketing/ticketing.service'
 import { DataTablesModule } from 'angular-datatables';
 import { Config } from 'datatables.net';
 import { Subject } from 'rxjs';
-import { Expense } from '../../../interfaces/Expense';
+import { Expense } from '../../../interfaces/expense';
 
 
 @Component({
@@ -34,6 +34,16 @@ export class LastBillsComponent implements OnInit {
       }
     }
     
+  }
+
+  formatDate(date: Date | string): string {
+    if (!date) return '';
+    const options: Intl.DateTimeFormatOptions = {
+      day: '2-digit',
+      month: '2-digit',
+      year: 'numeric'
+    };
+    return new Date(date).toLocaleDateString('es-ES', options);
   }
 
   loadBills(){

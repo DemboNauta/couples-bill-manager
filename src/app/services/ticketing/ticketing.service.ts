@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { environment } from '../../../environments/environment';
+import { Expense } from '../../interfaces/expense';
 
 @Injectable({
   providedIn: 'root'
@@ -17,9 +18,9 @@ export class TicketingService {
     const formData = new FormData();
     formData.append('file', file);
 
-    this.http.post<any>(`${environment.apiUrl}/expense/upload`, formData).subscribe((res: {gastos: []})=>{
+    this.http.post<any>(`${environment.apiUrl}/expense/upload`, formData).subscribe((res: {token:string, gastos: Expense[], ingresos: Expense[]})=>{
       console.log(res.gastos)
-      this.updateGastos(rep.gastos)
+      this.updateGastos(res.gastos)
     });
   }
 

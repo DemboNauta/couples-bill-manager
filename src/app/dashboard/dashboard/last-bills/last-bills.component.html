@@ -35,10 +35,10 @@
     <tbody>
         @for (bill of bills; track $index) {
             <tr>
-                <td>{{ bill[0] }}</td>
-                <td>{{ bill[1] }}</td>
-                <td>{{ bill[2] }}€</td>
-                <td>{{ bill[3] }}</td>
+                <td>{{ bill.description }}</td>
+                <td>{{ bill.category }}</td>
+                <td>{{ bill.amount.toFixed(2) }}€</td>
+                <td>{{ formatDate(bill.date) }}</td>
             </tr>
         }
 

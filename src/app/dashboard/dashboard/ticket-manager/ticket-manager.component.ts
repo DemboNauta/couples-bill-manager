@@ -24,15 +24,16 @@ export class TicketManagerComponent {
   onSubmit(event: Event): void {
     if (this.ticketInput) {
       console.log('File to upload:', this.ticketInput);
-      this.ticketService.uploadTicket(this.ticketInput).subscribe(
-        (response) => {
-          console.log('Upload successful', response)
-          this.gastos = response.gastos
-          this.ticketService.updateGastos(response.gastos)
-        },
+      this.ticketService.uploadTicket(this.ticketInput)
+      // .subscribe(
+      //   (response) => {
+      //     console.log('Upload successful', response)
+      //     this.gastos = response.gastos
+      //     this.ticketService.updateGastos(response.gastos)
+      //   },
         
-        error => console.error('Upload error', error)
-      );
+      //   error => console.error('Upload error', error)
+      // );
     } else {
       console.error('No file selected');
     }
