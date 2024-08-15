@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Edgar\\Documents\\couples-bill-manager\\couples-bill-manager\\CouplesBillManagerAPI\\CouplesBillManagerAPI.csproj": {}
+    "F:\\Documentos\\couples-bills-manager\\CouplesBillManagerAPI\\CouplesBillManagerAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Edgar\\Documents\\couples-bill-manager\\couples-bill-manager\\CouplesBillManagerAPI\\CouplesBillManagerAPI.csproj": {
+    "F:\\Documentos\\couples-bills-manager\\CouplesBillManagerAPI\\CouplesBillManagerAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Edgar\\Documents\\couples-bill-manager\\couples-bill-manager\\CouplesBillManagerAPI\\CouplesBillManagerAPI.csproj",
+        "projectUniqueName": "F:\\Documentos\\couples-bills-manager\\CouplesBillManagerAPI\\CouplesBillManagerAPI.csproj",
         "projectName": "CouplesBillManagerAPI",
-        "projectPath": "C:\\Users\\Edgar\\Documents\\couples-bill-manager\\couples-bill-manager\\CouplesBillManagerAPI\\CouplesBillManagerAPI.csproj",
-        "packagesPath": "C:\\Users\\Edgar\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Edgar\\Documents\\couples-bill-manager\\couples-bill-manager\\CouplesBillManagerAPI\\obj\\",
+        "projectPath": "F:\\Documentos\\couples-bills-manager\\CouplesBillManagerAPI\\CouplesBillManagerAPI.csproj",
+        "packagesPath": "C:\\Users\\edgar\\.nuget\\packages\\",
+        "outputPath": "F:\\Documentos\\couples-bills-manager\\CouplesBillManagerAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Edgar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\edgar\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

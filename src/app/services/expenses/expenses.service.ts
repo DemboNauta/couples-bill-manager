@@ -7,7 +7,7 @@ import { Expense } from '../../interfaces/expense';
 @Injectable({
   providedIn: 'root'
 })
-export class TicketingService {
+export class ExpensesService {
 
   
   private gastosSubject = new BehaviorSubject<any[]>([]);
@@ -26,5 +26,11 @@ export class TicketingService {
 
   updateGastos(newArray: any[]): void {
     this.gastosSubject.next(newArray);
+  }
+
+  getGastos(){
+    this.http.get<Expense[]>(`${environment.apiUrl}/expense/expenses`).subscribe(
+      (gastos)=>this.updateGastos(gastos)
+    )
   }
 }

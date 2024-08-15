@@ -24,6 +24,10 @@ export class AuthService {
   refreshToken(): Observable<string>{
     return this.http.get<string>(`${environment.apiUrl}/auth/refreshToken`)  
   }
+
+  verifyToken(token: string){
+    return this.http.get<User>(`${environment.apiUrl}/auth/verifyToken`)
+  }
   resetPassword(userLogin: UserLogin){
     this.http.put(`${environment.apiUrl}/auth/resetPassword`, userLogin)
   }

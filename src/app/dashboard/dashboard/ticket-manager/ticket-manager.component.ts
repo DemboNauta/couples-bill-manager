@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { TicketingService } from '../../../services/ticketing/ticketing.service';
+import { ExpensesService } from '../../../services/expenses/expenses.service';
 
 @Component({
   selector: 'app-ticket-manager',
@@ -11,7 +11,7 @@ import { TicketingService } from '../../../services/ticketing/ticketing.service'
 export class TicketManagerComponent {
   ticketInput: File | null = null;
   gastos: [] = [];
-  constructor(private ticketService: TicketingService) {}
+  constructor(private expensesService: ExpensesService) {}
 
   onFileChange(event: Event): void {
     const input = event.target as HTMLInputElement;
@@ -24,12 +24,12 @@ export class TicketManagerComponent {
   onSubmit(event: Event): void {
     if (this.ticketInput) {
       console.log('File to upload:', this.ticketInput);
-      this.ticketService.uploadTicket(this.ticketInput)
+      this.expensesService.uploadTicket(this.ticketInput)
       // .subscribe(
       //   (response) => {
       //     console.log('Upload successful', response)
       //     this.gastos = response.gastos
-      //     this.ticketService.updateGastos(response.gastos)
+      //     this.expensesService.updateGastos(response.gastos)
       //   },
         
       //   error => console.error('Upload error', error)

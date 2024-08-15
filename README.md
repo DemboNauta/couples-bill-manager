@@ -59,7 +59,7 @@ ng serve
 
 Navega a la carpeta backend-couples-bills-manager y ejecuta el proyecto .NET:
 
-cd backend-couples-bills-manager
+cd CouplesBillManagerAPI
 
 dotnet run
 

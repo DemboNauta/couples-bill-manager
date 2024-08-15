@@ -1,4 +1,5 @@
 using CouplesBillManagerAPI.Data;
+using CouplesBillManagerAPI.Helpers;
 using CouplesBillManagerAPI.Models;
 using Dapper;
 using Microsoft.AspNetCore.Authorization;
@@ -15,9 +16,11 @@ namespace CouplesBillManagerAPI.Controllers
   public class ExpenseController : ControllerBase
   {
     DataContextDapper _dapper;
+    ReusbleSqlHelper _sqlHelper;
     public ExpenseController(IConfiguration config)
     {
       _dapper = new DataContextDapper(config);
+      _sqlHelper = new ReusbleSqlHelper(config);
     }
 
     [HttpGet("TestConnection")]
@@ -36,6 +39,7 @@ namespace CouplesBillManagerAPI.Controllers
 
       List<Expense> gastos = new List<Expense>();
       List<Expense> ingresos = new List<Expense>();
+      List<string> errores = new List<string>();
 
       using (var stream = file.OpenReadStream())
       {
@@ -61,46 +65,65 @@ namespace CouplesBillManagerAPI.Controllers
               continue;
             }
 
-            var cells = row.SelectNodes("ss:Cell", nsmgr);
-
-            if (cells.Count >= 6) // Asegurarse de que haya al menos 6 celdas (una por cada columna esperada)
+            try
             {
-              var fecha = cells[0].InnerText;
-              var concepto = cells[1].InnerText;
-              var categoria = cells[2].InnerText;
-              var importe = cells[3].InnerText;
-              var tipoMovimiento = cells[4].InnerText;
-              var cuentaTarjeta = cells[5].InnerText;
+              var cells = row.SelectNodes("ss:Cell", nsmgr);
 
-              // Intentar convertir el importe a decimal
-              if (decimal.TryParse(importe, NumberStyles.AllowDecimalPoint | NumberStyles.AllowLeadingSign, CultureInfo.InvariantCulture, out decimal amountDecimal))
+              if (cells.Count >= 6) // Asegurarse de que haya al menos 6 celdas (una por cada columna esperada)
               {
-                var userId = int.Parse(this.User.FindFirst("userId")?.Value); // Convertir UserId a int
+                var fecha = cells[0].InnerText;
+                var concepto = cells[1].InnerText;
+                var categoria = cells[2].InnerText;
+                var importe = cells[3].InnerText;
+                var tipoMovimiento = cells[4].InnerText;
+                var cuentaTarjeta = cells[5].InnerText;
 
-                // Convertir la fecha al tipo DateTime usando el formato específico
-                if (DateTime.TryParseExact(fecha, "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime date))
+                // Intentar convertir el importe a decimal
+                if (decimal.TryParse(importe, NumberStyles.AllowDecimalPoint | NumberStyles.AllowLeadingSign, CultureInfo.InvariantCulture, out decimal amountDecimal))
                 {
-                  var expense = new Expense
-                  {
-                    UserId = userId,
-                    Date = date.Date, // Solo la parte de la fecha, sin hora
-                    Description = concepto,
-                    Category = categoria,
-                    Amount = amountDecimal,
-                    TransactionType = tipoMovimiento
-                  };
+                  int userId = int.Parse(this.User.FindFirst("userId")?.Value); // Convertir UserId a int
 
-                  // Clasificar como gasto o ingreso basado en el importe
-                  if (amountDecimal < 0)
+                  // Convertir la fecha al tipo DateTime usando el formato específico
+                  if (DateTime.TryParseExact(fecha, "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime date))
                   {
-                    gastos.Add(expense);
+                    var expense = new Expense
+                    {
+                      UserId = userId,
+                      Date = date.Date, // Solo la parte de la fecha, sin hora
+                      Description = concepto,
+                      Category = categoria,
+                      Amount = amountDecimal,
+                      TransactionType = tipoMovimiento
+                    };
+
+                    // Clasificar como gasto o ingreso basado en el importe
+                    if (amountDecimal < 0)
+                    {
+                      gastos.Add(expense);
+                    }
+                    else
+                    {
+                      ingresos.Add(expense);
+                    }
                   }
                   else
                   {
-                    ingresos.Add(expense);
+                    errores.Add($"Error al convertir la fecha en la fila {rowCounter + 1}: {fecha}");
                   }
                 }
+                else
+                {
+                  errores.Add($"Error al convertir el importe en la fila {rowCounter + 1}: {importe}");
+                }
               }
+              else
+              {
+                errores.Add($"Error en la fila {rowCounter + 1}: Número de celdas insuficiente");
+              }
+            }
+            catch (Exception ex)
+            {
+              errores.Add($"Error al procesar la fila {rowCounter + 1}: {ex.Message}");
             }
 
             rowCounter++; // Incrementar el contador de filas
@@ -109,8 +132,8 @@ namespace CouplesBillManagerAPI.Controllers
           foreach (Expense gasto in gastos)
           {
             string insertExpense = @"
-                        INSERT INTO Expenses(UserId, Amount, Description, Date, Category)
-                        VALUES(@UserIdParam, @AmountParam, @DescriptionParam, @DateParam, @CategoryParam)";
+                    INSERT INTO Expenses(UserId, Amount, Description, Date, Category)
+                    VALUES(@UserIdParam, @AmountParam, @DescriptionParam, @DateParam, @CategoryParam)";
             DynamicParameters expenseDetailParams = new DynamicParameters();
             expenseDetailParams.Add("@UserIdParam", gasto.UserId, DbType.Int32);
             expenseDetailParams.Add("@AmountParam", gasto.Amount, DbType.Decimal);
@@ -118,14 +141,21 @@ namespace CouplesBillManagerAPI.Controllers
             expenseDetailParams.Add("@DateParam", gasto.Date, DbType.Date); // Tipo DbType.Date para asegurarse de que solo se guarde la fecha
             expenseDetailParams.Add("@CategoryParam", gasto.Category, DbType.String);
 
-            _dapper.ExecuteSqlWithParameters(insertExpense, expenseDetailParams);
+            try
+            {
+              _dapper.ExecuteSqlWithParameters(insertExpense, expenseDetailParams);
+            }
+            catch (Exception ex)
+            {
+              errores.Add($"Error al insertar el gasto con descripción '{gasto.Description}': {ex.Message}");
+            }
           }
 
           foreach (Expense ingreso in ingresos)
           {
             string insertIncome = @"
-                        INSERT INTO Incomes(UserId, Amount, Description, Date, Category)
-                        VALUES(@UserIdParam, @AmountParam, @DescriptionParam, @DateParam, @CategoryParam)";
+                    INSERT INTO Incomes(UserId, Amount, Description, Date, Category)
+                    VALUES(@UserIdParam, @AmountParam, @DescriptionParam, @DateParam, @CategoryParam)";
             DynamicParameters incomeDetailParams = new DynamicParameters();
             incomeDetailParams.Add("@UserIdParam", ingreso.UserId, DbType.Int32);
             incomeDetailParams.Add("@AmountParam", ingreso.Amount, DbType.Decimal);
@@ -133,17 +163,30 @@ namespace CouplesBillManagerAPI.Controllers
             incomeDetailParams.Add("@DateParam", ingreso.Date, DbType.Date); // Tipo DbType.Date para asegurarse de que solo se guarde la fecha
             incomeDetailParams.Add("@CategoryParam", ingreso.Category, DbType.String);
 
-            _dapper.ExecuteSqlWithParameters(insertIncome, incomeDetailParams);
+            try
+            {
+              _dapper.ExecuteSqlWithParameters(insertIncome, incomeDetailParams);
+            }
+            catch (Exception ex)
+            {
+              errores.Add($"Error al insertar el ingreso con descripción '{ingreso.Description}': {ex.Message}");
+            }
           }
-
         }
-        catch (System.Exception ex)
+        catch (Exception ex)
         {
           return BadRequest($"Error al procesar el archivo XML: {ex.Message}");
         }
       }
-
-      return Ok(new { Message = "Archivo XML procesado correctamente.", Gastos = gastos, Ingresos = ingresos });
+      int userIdSelect = int.Parse(this.User.FindFirst("userId")?.Value);
+      return Ok(new { Message = "Archivo XML procesado con éxito.", Gastos = _sqlHelper.selectExpenses(userIdSelect, "month") });
+    }
+    [Authorize]
+    [HttpGet("expenses")]
+    public IActionResult getLastExpenses()
+    {
+      int userIdSelect = int.Parse(this.User.FindFirst("userId")?.Value);
+      return Ok(_sqlHelper.selectExpenses(userIdSelect, "month"));
     }
   }
 }

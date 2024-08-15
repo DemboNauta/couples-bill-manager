@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth/auth.service';
 import { FormControl, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { UserLogin } from '../../interfaces/userLogin';
 import { User } from '../../interfaces/user';
+import { ExpensesService } from '../../services/expenses/expenses.service';
 
 @Component({
   selector: 'app-login',
@@ -12,8 +13,8 @@ import { User } from '../../interfaces/user';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'] // Corrigido el nombre de la propiedad
 })
-export class LoginComponent {
-  constructor(private router: Router, private authService: AuthService) { }
+export class LoginComponent implements OnInit{
+  constructor(private router: Router, private authService: AuthService, private expenseService: ExpensesService) { }
 
   // Formulario de inicio de sesión con validadores
   loginForm = new FormGroup({
@@ -28,6 +29,13 @@ export class LoginComponent {
     password: new FormControl('', [Validators.required, Validators.minLength(6)]),
     passwordConfirm: new FormControl('', [Validators.required])
   })
+
+  ngOnInit(): void {
+    if(localStorage.getItem("token") != null)
+    {
+      
+    }
+  }
 
   loggedInUser: User | null = null;
   registerFormControl: boolean = false;
@@ -44,12 +52,11 @@ export class LoginComponent {
       
       this.authService.login(user).subscribe((response) => {
         const token = response.token
-        console.log(token)
         this.loggedInUser = response.user;
-        console.log(this.loggedInUser)
         if(this.loggedInUser){
           this.authService.loggedInUser=response.user;
           localStorage.setItem("token", response.token)
+          this.expenseService.getGastos()
           this.router.navigate(['/dashboard']);
         }
         

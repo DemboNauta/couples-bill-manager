@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule, DatePipe } from '@angular/common';
-import { TicketingService } from '../../../services/ticketing/ticketing.service';
+import { ExpensesService } from '../../../services/expenses/expenses.service';
 import { DataTablesModule } from 'angular-datatables';
 import { Config } from 'datatables.net';
 import { Subject } from 'rxjs';
@@ -21,7 +21,7 @@ export class LastBillsComponent implements OnInit {
   dtOptions: Config={}
   dtTrigger: Subject<any> = new Subject<any>()
 
-  constructor(private datePipe: DatePipe, private ticketingService: TicketingService){
+  constructor(private datePipe: DatePipe, private expensesService: ExpensesService){
   }
 
   ngOnInit(): void {
@@ -47,7 +47,7 @@ export class LastBillsComponent implements OnInit {
   }
 
   loadBills(){
-    this.ticketingService.gastos.subscribe(res=>{
+    this.expensesService.gastos.subscribe(res=>{
       this.bills=res
       console.log('aaaaaaaaaaa')
       console.log(this.bills)

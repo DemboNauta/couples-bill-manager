@@ -12,9 +12,9 @@ using System;
 using System.Reflection;
 
 [assembly: System.Reflection.AssemblyCompanyAttribute("CouplesBillManagerAPI")]
-[assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
+[assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c2013be55893791df73ddac96af1a461190cac7d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4cc381afefd4a34c2cffe402f3b0eeb2e9f9ff9b")]
 [assembly: System.Reflection.AssemblyProductAttribute("CouplesBillManagerAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CouplesBillManagerAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
