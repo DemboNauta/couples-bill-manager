@@ -182,11 +182,11 @@ namespace CouplesBillManagerAPI.Controllers
       return Ok(new { Message = "Archivo XML procesado con éxito.", Gastos = _sqlHelper.selectExpenses(userIdSelect, "month") });
     }
     [Authorize]
-    [HttpGet("expenses")]
-    public IActionResult getLastExpenses()
+    [HttpGet("expenses/{period}")]
+    public IActionResult getLastExpenses(string period = "month")
     {
       int userIdSelect = int.Parse(this.User.FindFirst("userId")?.Value);
-      return Ok(_sqlHelper.selectExpenses(userIdSelect, "month"));
+      return Ok(_sqlHelper.selectExpenses(userIdSelect, period));
     }
   }
 }

@@ -4,6 +4,8 @@ import { TicketManagerComponent } from './ticket-manager/ticket-manager.componen
 import { LastBillsComponent } from './last-bills/last-bills.component';
 import { AuthService } from '../../services/auth/auth.service';
 import { User } from '../../interfaces/user';
+import { ExpensesService } from '../../services/expenses/expenses.service';
+import { Expense } from '../../interfaces/expense';
 
 @Component({
   selector: 'app-dashboard',
@@ -13,10 +15,15 @@ import { User } from '../../interfaces/user';
   styleUrl: './dashboard.component.css'
 })
 export class DashboardComponent implements OnInit {
-  constructor(private authService:AuthService){}
+  constructor(private authService:AuthService, private expensesService: ExpensesService){}
+  total: number = 0
   loggedInUser: User | null =null;
   ngOnInit(): void {
       this.loggedInUser=this.authService.loggedInUser
-      console.log(this.loggedInUser)
+      this.expensesService.gastos.subscribe((gastos)=>{
+        for(let gasto of gastos){
+          this.total += gasto.amount
+        }
+      })
   }
 }

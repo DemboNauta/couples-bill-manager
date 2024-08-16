@@ -5,7 +5,10 @@ using CouplesBillManagerAPI.Models;
 using Dapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.Tokens;
 using System.Data;
+using System.IdentityModel.Tokens.Jwt;
+using System.Text;
 using System.Text.Json;
 
 namespace CouplesBillManagerAPI.Controllers
@@ -17,12 +20,15 @@ namespace CouplesBillManagerAPI.Controllers
     private readonly DataContextDapper _dapper;
     private readonly AuthHelper _authHelper;
     private readonly ReusbleSqlHelper _reusbleSqlHelper;
+    private readonly IConfiguration _config;
+
 
     public AuthController(IConfiguration config)
     {
       _dapper = new DataContextDapper(config);
       _authHelper = new AuthHelper(config);
       _reusbleSqlHelper = new ReusbleSqlHelper(config);
+      _config = config;
     }
     [HttpPost("register")]
     public IActionResult Register(UserRegisterDTO userRegister)
@@ -69,6 +75,7 @@ namespace CouplesBillManagerAPI.Controllers
 
       return BadRequest("Error, can't change password");
     }
+
     [HttpPost("Login")]
     public IActionResult Login(UserLoginDTO userLogin)
     {
@@ -98,5 +105,61 @@ namespace CouplesBillManagerAPI.Controllers
                 user = userLogged
             });
     }
+
+    [HttpGet("VerifyToken")]
+    public IActionResult VerifyToken()
+    {
+      int userId = int.Parse(this.User.FindFirst("userId")?.Value);
+      if(userId != null)
+      {
+        return Ok(_reusbleSqlHelper.getUser(userId));
+      }
+      return BadRequest("Token not allowed");
+    }
+
+    //[HttpGet("verifytoken/{token}")]
+    //public IActionResult VerifyToken(string token)
+    //{
+    //  JwtSecurityTokenHandler tokenHandler = new JwtSecurityTokenHandler();
+
+    //  TokenValidationParameters tokenValidationParameters = new TokenValidationParameters()
+    //  {
+    //    IssuerSigningKey = new SymmetricSecurityKey(
+    //          Encoding.UTF8.GetBytes(
+    //              _config.GetSection("AppSettings:TokenKey").Value ?? ""
+    //          )
+    //      ),
+    //    ValidateIssuer = false,
+    //    ValidateIssuerSigningKey = false,
+    //    ValidateAudience = false,
+    //  };
+
+    //  try
+    //  {
+    //    // Validar el token
+    //    var principal = tokenHandler.ValidateToken(token, tokenValidationParameters, out SecurityToken validatedToken);
+
+    //    // Extraer el userId desde las claims
+    //    var userIdClaim = principal.FindFirst("userId");
+    //    if (userIdClaim != null)
+    //    {
+    //      var userId = userIdClaim.Value;
+
+    //      // Cargar el usuario desde la base de datos usando el userId
+    //      User user = _dapper.LoadDataSingle<User>("SELECT * FROM Users WHERE UserId = " + userId);
+
+    //      return Ok(new { Valid = true, User = user });
+    //    }
+    //    else
+    //    {
+    //      return BadRequest("Token válido, pero no contiene 'userId'.");
+    //    }
+    //  }
+    //  catch (Exception)
+    //  {
+    //    return Unauthorized(new { Valid = false });
+    //  }
+    //}
+
   }
 }

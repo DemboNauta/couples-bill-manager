@@ -10,7 +10,7 @@ import { Expense } from '../../interfaces/expense';
 export class ExpensesService {
 
   
-  private gastosSubject = new BehaviorSubject<any[]>([]);
+  private gastosSubject = new BehaviorSubject<Expense[]>([]);
   gastos = this.gastosSubject.asObservable();
   constructor(private http: HttpClient) { }
 
@@ -28,8 +28,8 @@ export class ExpensesService {
     this.gastosSubject.next(newArray);
   }
 
-  getGastos(){
-    this.http.get<Expense[]>(`${environment.apiUrl}/expense/expenses`).subscribe(
+  getGastos(period: string = "month"){
+    this.http.get<Expense[]>(`${environment.apiUrl}/expense/expenses/${period}`).subscribe(
       (gastos)=>this.updateGastos(gastos)
     )
   }

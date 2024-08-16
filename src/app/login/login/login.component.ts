@@ -33,7 +33,15 @@ export class LoginComponent implements OnInit{
   ngOnInit(): void {
     if(localStorage.getItem("token") != null)
     {
-      
+      this.authService.verifyToken().subscribe((response)=>{
+        console.log(response)
+        this.loggedInUser=response
+        console.log(this.loggedInUser)
+        this.authService.loggedInUser=this.loggedInUser;
+        this.expenseService.getGastos()
+        this.router.navigate(['/dashboard']);
+
+      })
     }
   }
 
@@ -53,6 +61,7 @@ export class LoginComponent implements OnInit{
       this.authService.login(user).subscribe((response) => {
         const token = response.token
         this.loggedInUser = response.user;
+
         if(this.loggedInUser){
           this.authService.loggedInUser=response.user;
           localStorage.setItem("token", response.token)
