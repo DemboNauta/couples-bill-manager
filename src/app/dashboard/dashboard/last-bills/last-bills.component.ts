@@ -19,8 +19,8 @@ export class LastBillsComponent implements OnInit {
   itemsPerPage: number = 10;
   totalPages: number = 1;
   searchQuery: string = '';
-  sortColumn: string = '';
-  sortDirection: 'asc' | 'desc' = 'asc';
+  sortColumn: string = 'date';
+  sortDirection: 'asc' | 'desc' = 'desc';
 
   constructor(private datePipe: DatePipe, private expensesService: ExpensesService) { }
 
@@ -29,15 +29,21 @@ export class LastBillsComponent implements OnInit {
   }
 
   selectChange(period: string): void {
+    this.sortColumn='date';
+    this.sortBy('date')
+    this.sortDirection='desc';
     this.loadBills(period);
+
   }
 
   loadBills(period: string): void {
+    this.currentPage=1
     this.expensesService.getGastos(period).subscribe(res => {
       this.expensesService.updateGastos(res)
       this.bills = res;
       this.applyFilters();
     });
+    this.expensesService.getIncomes(period).subscribe(()=>{});
   }
 
   applyFilters(): void {
@@ -76,6 +82,9 @@ export class LastBillsComponent implements OnInit {
   onSearch(query: string): void {
     this.searchQuery = query;
     this.applyFilters();
+    this.paginatedBills=this.filteredBills
+    this.paginate()
+    this.currentPage=1
   }
 
   sortBy(column: keyof Expense): void {
@@ -86,7 +95,7 @@ export class LastBillsComponent implements OnInit {
       this.sortDirection = 'asc';
     }
     
-    this.paginatedBills.sort((a, b) => {
+    this.filteredBills.sort((a, b) => {
       let valueA = a[column];
       let valueB = b[column];
       
@@ -100,6 +109,8 @@ export class LastBillsComponent implements OnInit {
       if (valueA > valueB) return this.sortDirection === 'asc' ? 1 : -1;
       return 0;
     });
+    this.paginatedBills=this.filteredBills
+    this.paginate()
   }
 
   prevPage(): void {

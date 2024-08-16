@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable, tap } from 'rxjs';
 import { environment } from '../../../environments/environment';
 import { Expense } from '../../interfaces/expense';
 
@@ -12,6 +12,9 @@ export class ExpensesService {
   
   private gastosSubject = new BehaviorSubject<Expense[]>([]);
   gastos = this.gastosSubject.asObservable();
+  private incomesSubject = new BehaviorSubject<Expense[]>([]);
+  incomes = this.incomesSubject.asObservable();
+
   constructor(private http: HttpClient) { }
 
   uploadTicket(file: File) {
@@ -30,5 +33,15 @@ export class ExpensesService {
 
   getGastos(period: string = "lastmonth"){
     return this.http.get<Expense[]>(`${environment.apiUrl}/expense/expenses/${period}`)
+  }
+
+  updateIncomes(newArray: Expense[]): void {
+    this.incomesSubject.next(newArray);
+  }
+
+  getIncomes(period: string = 'lastmonth'): Observable<Expense[]> {
+    return this.http.get<Expense[]>(`${environment.apiUrl}/expense/incomes/${period}`).pipe(
+      tap((newArray: Expense[]) => this.updateIncomes(newArray))
+    );
   }
 }

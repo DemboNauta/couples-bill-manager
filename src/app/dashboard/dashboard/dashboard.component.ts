@@ -6,25 +6,39 @@ import { AuthService } from '../../services/auth/auth.service';
 import { User } from '../../interfaces/user';
 import { ExpensesService } from '../../services/expenses/expenses.service';
 import { Expense } from '../../interfaces/expense';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [ItemFormComponent, TicketManagerComponent, LastBillsComponent],
+  imports: [ItemFormComponent, TicketManagerComponent, LastBillsComponent, CommonModule],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css'
 })
 export class DashboardComponent implements OnInit {
   constructor(private authService:AuthService, private expensesService: ExpensesService){}
-  total: number = 0
+  totalExpense: number = 0
+  totalIncomes: number = 0
+  totalDifenrence: number = 0
   loggedInUser: User | null =null;
+
   ngOnInit(): void {
-      this.loggedInUser=this.authService.loggedInUser
+    this.authService.verifyToken().subscribe((user)=>{
+      this.loggedInUser = user
+    })
       this.expensesService.gastos.subscribe((gastos)=>{
-        this.total=0
+        this.totalExpense=0
         for(let gasto of gastos){
-          this.total += gasto.amount
+          this.totalExpense += gasto.amount
         }
+        this.expensesService.incomes.subscribe((incomes)=>{
+          this.totalIncomes=0
+          for(let income of incomes){
+            this.totalIncomes += income.amount
+          }
+          
+          this.totalDifenrence=this.totalExpense+this.totalIncomes
+        })
       })
   }
 }

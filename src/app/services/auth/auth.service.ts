@@ -25,6 +25,10 @@ export class AuthService {
     return this.http.get<string>(`${environment.apiUrl}/auth/refreshToken`)  
   }
 
+  logOut(){
+    localStorage.removeItem("token")
+  }
+
   verifyToken(){
     return this.http.get<User>(`${environment.apiUrl}/auth/verifyToken/`)
   }

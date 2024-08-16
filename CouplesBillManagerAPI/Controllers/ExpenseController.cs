@@ -179,14 +179,21 @@ namespace CouplesBillManagerAPI.Controllers
         }
       }
       int userIdSelect = int.Parse(this.User.FindFirst("userId")?.Value);
-      return Ok(new { Message = "Archivo XML procesado con éxito.", Gastos = _sqlHelper.selectExpenses(userIdSelect, "lastmonth") });
+      return Ok(new { Message = "Archivo XML procesado con éxito.", Gastos = _sqlHelper.selectExpenses(userIdSelect, "lastmonth", "Expenses") });
     }
     [Authorize]
     [HttpGet("expenses/{period}")]
     public IActionResult getLastExpenses(string period = "lastmonth")
     {
       int userIdSelect = int.Parse(this.User.FindFirst("userId")?.Value);
-      return Ok(_sqlHelper.selectExpenses(userIdSelect, period));
+      return Ok(_sqlHelper.selectExpenses(userIdSelect, period, "Expenses"));
+    }
+    [Authorize]
+    [HttpGet("incomes/{period}")]
+    public IActionResult getIncomes(string period = "lastmonth")
+    {
+      int userIdSelect = int.Parse(this.User.FindFirst("userId")?.Value);
+      return Ok(_sqlHelper.selectExpenses(userIdSelect, period, "Incomes"));
     }
   }
 }

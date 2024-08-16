@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "F:\\Documentos\\couples-bills-manager\\CouplesBillManagerAPI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{757CFA74-EE3A-45FA-9CFD-BFEA00CA97A8}|CouplesBillManagerAPI.csproj|f:\\documentos\\couples-bills-manager\\couplesbillmanagerapi\\helpers\\reusblesqlhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{757CFA74-EE3A-45FA-9CFD-BFEA00CA97A8}|CouplesBillManagerAPI.csproj|solutionrelative:helpers\\reusblesqlhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{757CFA74-EE3A-45FA-9CFD-BFEA00CA97A8}|CouplesBillManagerAPI.csproj|f:\\documentos\\couples-bills-manager\\couplesbillmanagerapi\\controllers\\expensecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{757CFA74-EE3A-45FA-9CFD-BFEA00CA97A8}|CouplesBillManagerAPI.csproj|solutionrelative:controllers\\expensecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{757CFA74-EE3A-45FA-9CFD-BFEA00CA97A8}|CouplesBillManagerAPI.csproj|f:\\documentos\\couples-bills-manager\\couplesbillmanagerapi\\helpers\\reusblesqlhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{757CFA74-EE3A-45FA-9CFD-BFEA00CA97A8}|CouplesBillManagerAPI.csproj|solutionrelative:helpers\\reusblesqlhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{757CFA74-EE3A-45FA-9CFD-BFEA00CA97A8}|CouplesBillManagerAPI.csproj|f:\\documentos\\couples-bills-manager\\couplesbillmanagerapi\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -26,17 +26,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "ReusbleSqlHelper.cs",
               "DocumentMoniker": "F:\\Documentos\\couples-bills-manager\\CouplesBillManagerAPI\\Helpers\\ReusbleSqlHelper.cs",
               "RelativeDocumentMoniker": "Helpers\\ReusbleSqlHelper.cs",
               "ToolTip": "F:\\Documentos\\couples-bills-manager\\CouplesBillManagerAPI\\Helpers\\ReusbleSqlHelper.cs",
               "RelativeToolTip": "Helpers\\ReusbleSqlHelper.cs",
-              "ViewState": "AQIAAEcAAAAAAAAAAADwv1UAAAAKAAAA",
+              "ViewState": "AQIAAB8AAAAAAAAAAADgvzEAAAAyAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-15T15:31:47.787Z",
               "EditorCaption": ""
@@ -49,9 +49,10 @@
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "F:\\Documentos\\couples-bills-manager\\CouplesBillManagerAPI\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAACQAAAAAAAAAAAAAADcAAAAAAAAA",
+              "ViewState": "AQIAACEAAAAAAAAAAIBJwDcAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-15T15:10:33.266Z"
+              "WhenOpened": "2024-08-15T15:10:33.266Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -61,19 +62,20 @@
               "RelativeDocumentMoniker": "Controllers\\AuthController.cs",
               "ToolTip": "F:\\Documentos\\couples-bills-manager\\CouplesBillManagerAPI\\Controllers\\AuthController.cs",
               "RelativeToolTip": "Controllers\\AuthController.cs",
-              "ViewState": "AQIAAGYAAAAAAAAAAAAAwGwAAAAcAAAA",
+              "ViewState": "AQIAAEcAAAAAAAAAAAAUwGwAAAAcAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-15T15:04:33.111Z"
+              "WhenOpened": "2024-08-15T15:04:33.111Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "ExpenseController.cs",
               "DocumentMoniker": "F:\\Documentos\\couples-bills-manager\\CouplesBillManagerAPI\\Controllers\\ExpenseController.cs",
               "RelativeDocumentMoniker": "Controllers\\ExpenseController.cs",
               "ToolTip": "F:\\Documentos\\couples-bills-manager\\CouplesBillManagerAPI\\Controllers\\ExpenseController.cs",
               "RelativeToolTip": "Controllers\\ExpenseController.cs",
-              "ViewState": "AQIAAKYAAAAAAAAAAAAAALoAAAAFAAAA",
+              "ViewState": "AQIAALUAAAAAAAAAAAAqwL8AAAAVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-14T15:24:36.595Z",
               "EditorCaption": ""

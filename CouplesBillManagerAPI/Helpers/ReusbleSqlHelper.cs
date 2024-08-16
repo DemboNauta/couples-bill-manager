@@ -39,9 +39,9 @@ namespace CouplesBillManagerAPI.Helpers
 
     }
 
-    public List<Expense> selectExpenses(int userId, string period)
+    public List<Expense> selectExpenses(int userId, string period, string table)
     {
-      string sqlQuery = "SELECT * FROM Expenses WHERE UserId = @UserIdParameter";
+      string sqlQuery = $"SELECT * FROM {table} WHERE UserId = @UserIdParameter";
       DynamicParameters parameters = new DynamicParameters();
       parameters.Add("@UserIdParameter", userId, DbType.Int32);
 
