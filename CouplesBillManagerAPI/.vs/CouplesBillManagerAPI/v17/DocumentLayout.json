@@ -36,7 +36,7 @@
               "RelativeDocumentMoniker": "Helpers\\ReusbleSqlHelper.cs",
               "ToolTip": "F:\\Documentos\\couples-bills-manager\\CouplesBillManagerAPI\\Helpers\\ReusbleSqlHelper.cs",
               "RelativeToolTip": "Helpers\\ReusbleSqlHelper.cs",
-              "ViewState": "AQIAADEAAAAAAAAAAAAAAEkAAAAWAAAA",
+              "ViewState": "AQIAAEcAAAAAAAAAAADwv1UAAAAKAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-15T15:31:47.787Z",
               "EditorCaption": ""
@@ -51,8 +51,7 @@
               "RelativeToolTip": "Program.cs",
               "ViewState": "AQIAACQAAAAAAAAAAAAAADcAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-15T15:10:33.266Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-15T15:10:33.266Z"
             },
             {
               "$type": "Document",
@@ -64,8 +63,7 @@
               "RelativeToolTip": "Controllers\\AuthController.cs",
               "ViewState": "AQIAAGYAAAAAAAAAAAAAwGwAAAAcAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-15T15:04:33.111Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-15T15:04:33.111Z"
             },
             {
               "$type": "Document",
@@ -75,7 +73,7 @@
               "RelativeDocumentMoniker": "Controllers\\ExpenseController.cs",
               "ToolTip": "F:\\Documentos\\couples-bills-manager\\CouplesBillManagerAPI\\Controllers\\ExpenseController.cs",
               "RelativeToolTip": "Controllers\\ExpenseController.cs",
-              "ViewState": "AQIAAKkAAAAAAAAAAAAAALwAAAApAAAA",
+              "ViewState": "AQIAAKYAAAAAAAAAAAAAALoAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-14T15:24:36.595Z",
               "EditorCaption": ""

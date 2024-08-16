@@ -1,58 +1,119 @@
-import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
-import { Subject } from 'rxjs';
+import { Component, OnInit } from '@angular/core';
 import { Expense } from '../../../interfaces/expense';
-import { DataTableDirective, DataTablesModule } from 'angular-datatables';
-import { Api, Config } from 'datatables.net';
-
 import { DatePipe } from '@angular/common';
 import { ExpensesService } from '../../../services/expenses/expenses.service';
 
 @Component({
   selector: 'app-last-bills',
   standalone: true,
-  imports: [DataTablesModule],
   templateUrl: './last-bills.component.html',
   styleUrls: ['./last-bills.component.css'],
   providers: [DatePipe]
-
 })
-export class LastBillsComponent implements OnInit, OnDestroy {
-
-  @ViewChild(DataTableDirective, { static: false })
-  datatableElement!: DataTableDirective;
+export class LastBillsComponent implements OnInit {
 
   bills: Expense[] = [];
-  dtOptions: Config={}
-  dtTrigger: Subject<any> = new Subject<any>();
+  filteredBills: Expense[] = [];
+  paginatedBills: Expense[] = [];
+  currentPage: number = 1;
+  itemsPerPage: number = 10;
+  totalPages: number = 1;
+  searchQuery: string = '';
+  sortColumn: string = '';
+  sortDirection: 'asc' | 'desc' = 'asc';
 
   constructor(private datePipe: DatePipe, private expensesService: ExpensesService) { }
 
   ngOnInit(): void {
-    this.dtOptions = {
-      pagingType: 'full_numbers',
-      pageLength: 25,
-      language: {
-        url: "//cdn.datatables.net/plug-ins/1.10.15/i18n/Spanish.json"
-      }
-    };
-
-    this.loadBills();
+    this.loadBills('lastmonth');
   }
 
-  loadBills(): void {
-    this.expensesService.gastos.subscribe(res => {
-      this.bills = res;
+  selectChange(period: string): void {
+    this.loadBills(period);
+  }
 
-      // Destruir la tabla si ya está inicializada
-      if (this.datatableElement && this.datatableElement.dtInstance) {
-        this.datatableElement.dtInstance.then((dtInstance: Api) => {
-          dtInstance.destroy(); // Destruir la tabla
-          this.dtTrigger.next(this.bills); // Volver a inicializar la tabla con los nuevos datos
-        });
-      } else {
-        this.dtTrigger.next(this.bills); // Inicializar la tabla por primera vez
-      }
+  loadBills(period: string): void {
+    this.expensesService.getGastos(period).subscribe(res => {
+      this.expensesService.updateGastos(res)
+      this.bills = res;
+      this.applyFilters();
     });
+  }
+
+  applyFilters(): void {
+    this.filteredBills = this.bills;
+
+    if (this.searchQuery) {
+      this.filteredBills = this.filteredBills.filter(bill =>
+        bill.description.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
+        bill.category.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
+        bill.amount.toString().includes(this.searchQuery) ||
+        this.formatDate(bill.date).includes(this.searchQuery)
+      );
+    }
+
+    if (this.sortColumn) {
+      this.filteredBills.sort((a, b) => {
+        let valueA = a[this.sortColumn as keyof Expense];
+        let valueB = b[this.sortColumn as keyof Expense];
+
+        if (valueA < valueB) return this.sortDirection === 'asc' ? -1 : 1;
+        if (valueA > valueB) return this.sortDirection === 'asc' ? 1 : -1;
+        return 0;
+      });
+    }
+
+    this.totalPages = Math.ceil(this.filteredBills.length / this.itemsPerPage);
+    this.paginate();
+  }
+
+  paginate(): void {
+    const start = (this.currentPage - 1) * this.itemsPerPage;
+    const end = start + this.itemsPerPage;
+    this.paginatedBills = this.filteredBills.slice(start, end);
+  }
+
+  onSearch(query: string): void {
+    this.searchQuery = query;
+    this.applyFilters();
+  }
+
+  sortBy(column: keyof Expense): void {
+    if (this.sortColumn === column) {
+      this.sortDirection = this.sortDirection === 'asc' ? 'desc' : 'asc';
+    } else {
+      this.sortColumn = column;
+      this.sortDirection = 'asc';
+    }
+    
+    this.paginatedBills.sort((a, b) => {
+      let valueA = a[column];
+      let valueB = b[column];
+      
+      // Si estamos ordenando por la columna de fecha, convertir a Date
+      if (column === 'date') {
+        valueA = new Date(valueA as string | Date);
+        valueB = new Date(valueB as string | Date);
+      }
+  
+      if (valueA < valueB) return this.sortDirection === 'asc' ? -1 : 1;
+      if (valueA > valueB) return this.sortDirection === 'asc' ? 1 : -1;
+      return 0;
+    });
+  }
+
+  prevPage(): void {
+    if (this.currentPage > 1) {
+      this.currentPage--;
+      this.paginate();
+    }
+  }
+
+  nextPage(): void {
+    if (this.currentPage < this.totalPages) {
+      this.currentPage++;
+      this.paginate();
+    }
   }
 
   formatDate(date: Date | string): string {
@@ -65,8 +126,7 @@ export class LastBillsComponent implements OnInit, OnDestroy {
     return new Date(date).toLocaleDateString('es-ES', options);
   }
 
-  ngOnDestroy(): void {
-    // Destruir la instancia de DataTables cuando el componente se destruye
-    this.dtTrigger.unsubscribe();
+  trackByBill(index: number, bill: Expense): number {
+    return bill.id;
   }
 }

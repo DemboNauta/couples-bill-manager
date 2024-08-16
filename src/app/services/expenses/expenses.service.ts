@@ -28,9 +28,7 @@ export class ExpensesService {
     this.gastosSubject.next(newArray);
   }
 
-  getGastos(period: string = "month"){
-    this.http.get<Expense[]>(`${environment.apiUrl}/expense/expenses/${period}`).subscribe(
-      (gastos)=>this.updateGastos(gastos)
-    )
+  getGastos(period: string = "lastmonth"){
+    return this.http.get<Expense[]>(`${environment.apiUrl}/expense/expenses/${period}`)
   }
 }

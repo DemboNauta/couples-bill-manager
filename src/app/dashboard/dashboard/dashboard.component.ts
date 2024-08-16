@@ -21,6 +21,7 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {
       this.loggedInUser=this.authService.loggedInUser
       this.expensesService.gastos.subscribe((gastos)=>{
+        this.total=0
         for(let gasto of gastos){
           this.total += gasto.amount
         }

@@ -54,7 +54,7 @@ namespace CouplesBillManagerAPI.Helpers
       // Filtrar según el período de tiempo especificado
       switch (period.ToLower())
       {
-        case "month":
+        case "lastmonth":
           // Selecciona solo los registros del mes actual
           sqlQuery += " AND MONTH(Date) = MONTH(GETDATE()) AND YEAR(Date) = YEAR(GETDATE())";
           break;
