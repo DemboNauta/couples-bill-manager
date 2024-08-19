@@ -21,6 +21,9 @@ export class LastBillsComponent implements OnInit {
   searchQuery: string = '';
   sortColumn: string = 'date';
   sortDirection: 'asc' | 'desc' = 'desc';
+  showIncomesTable: boolean = false
+  tableShowing: string = 'Gastos'
+  period: string = 'lastmonth'
 
   constructor(private datePipe: DatePipe, private expensesService: ExpensesService) { }
 
@@ -32,18 +35,34 @@ export class LastBillsComponent implements OnInit {
     this.sortColumn='date';
     this.sortBy('date')
     this.sortDirection='desc';
+    this.period= period
     this.loadBills(period);
 
+  }
+  onShowTable(){
+    this.showIncomesTable = !this.showIncomesTable
+  
+    if(this.showIncomesTable) this.tableShowing = 'Ingresos'
+    else this.tableShowing = 'Gastos'
+    this.loadBills(this.period)
   }
 
   loadBills(period: string): void {
     this.currentPage=1
     this.expensesService.getGastos(period).subscribe(res => {
       this.expensesService.updateGastos(res)
-      this.bills = res;
-      this.applyFilters();
+      if(!this.showIncomesTable){
+        this.bills = res;
+        this.applyFilters();
+      }
+      
     });
-    this.expensesService.getIncomes(period).subscribe(()=>{});
+    this.expensesService.getIncomes(period).subscribe((incomes)=>{
+      if(this.showIncomesTable){
+        this.bills = incomes;
+        this.applyFilters();
+      }
+    });
   }
 
   applyFilters(): void {

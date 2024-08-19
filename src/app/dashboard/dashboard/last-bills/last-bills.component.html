@@ -1,4 +1,7 @@
-<div class="d-flex justify-content-end mb-4">
+
+
+<div class="d-flex justify-content-between mb-4">
+    <button class="pointer btn btn-dark" (click)="onShowTable()">{{this.tableShowing}}</button>
     <span id="spanTotalTransactions">Total de transacciones: {{bills.length}}</span>
 </div>
 
