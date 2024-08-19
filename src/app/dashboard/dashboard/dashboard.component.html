@@ -25,8 +25,12 @@
         </div>
         <div class="d-flex flex-column align-items-center">
           <p class="mb-2">Diferencia total: </p>
-          <span class="h4"[ngClass]="this.totalDifenrence>0 ? 'text-success' : 'text-danger'">{{this.totalDifenrence.toFixed(2)}}€</span>
+          <span class="h4"[ngClass]="this.totalDifference>0 ? 'text-success' : 'text-danger'">{{this.totalDifference.toFixed(2)}}€</span>
         </div>
+        <div style="display: block;" class="chart">
+          <canvas baseChart  [data]="chartData" [options]="chartOptions"></canvas>
+        </div>
+    
       </div>
     </div>
   </div>
