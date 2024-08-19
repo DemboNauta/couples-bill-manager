@@ -1,3 +1,4 @@
+![image](https://github.com/user-attachments/assets/cfc49ac2-e8a7-4696-a397-ae8b78ac2411)
 
 ## Couples Bills Manager
 Este proyecto es una aplicación Angular para la gestión de gastos compartidos entre parejas. La aplicación permite registrar, visualizar y analizar los gastos de manera eficiente.
