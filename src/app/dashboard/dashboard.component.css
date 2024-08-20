@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@400;700&family=Open+Sans:wght@400;700&family=Lato:wght@400;700&display=swap');
+
+#dashBoard{
+    height: auto;
+    padding: 0px 40px;
+}
+
+.h-fit-content{
+    height: fit-content;
+}
+
+.welcome-message {
+    font-family: 'Roboto', sans-serif; 
+    width: fit-content;
+    background-color: rgba(23, 24, 22, 0.8);
+    color: white;
+    font-weight: 300;
+    padding: 6px 18px; 
+}

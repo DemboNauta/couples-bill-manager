@@ -1,0 +1,109 @@
+.btnPagination {
+  background-color: #100f0f;
+  color: white;
+  transition: all 0.3s linear;
+}
+
+.btnPagination:hover {
+  background-color: rgb(44, 38, 38);
+  -webkit-box-shadow: 0px 0px 7px -3px rgba(51, 35, 51, 1);
+  -moz-box-shadow: 0px 0px 7px -3px rgba(51, 35, 51, 1);
+  box-shadow: 0px 0px 7px -3px rgba(51, 35, 51, 1);
+}
+
+#spanTotalTransactions {
+  padding: 10px;
+  border-radius: 6px;
+  background-color: rgb(0 0 0 / 80%);
+  color: white;
+}
+
+.pointer {
+  cursor: pointer;
+}
+.search-form{
+  border: 1px solid rgba(0, 0, 0, 0.694);
+}
+.search-form:focus{
+  outline: none !important;
+}
+
+.btn-tables {
+  background-color: #ffffffe4;
+  color: black;
+  border: 2px solid rgba(0, 0, 0, 0.615);
+  padding: 2px 20px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.btn-tables:hover {
+  color: white;
+  background-color: #000000bd;
+  -webkit-box-shadow: 0px 0px 5px -1px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 5px -1px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 5px -1px rgba(0, 0, 0, 0.75);
+
+}
+
+.custom-select {
+  background-color: #000000d5;
+  color: #fff;
+  border-radius: 5px;
+  padding: 0.5em;
+  border: 1px solid #555;
+  appearance: none;
+}
+
+.custom-select:focus {
+  outline: none;
+  border-color: #777;
+}
+
+#expenseTable {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #1e1e1e;
+  border-radius: 6px;
+  color: #f1f1f1;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+#expenseTable thead tr {
+  background-color: rgba(255, 255, 255, 0.1);
+  text-align: left;
+}
+
+#expenseTable th {
+  padding: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: black;
+  border-radius: 6px 6px 0px 0px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+#expenseTable th:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+#expenseTable tbody tr {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#expenseTable td {
+  padding: 10px;
+}
+
+#expenseTable tbody tr:nth-child(odd) {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* #expenseTable tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  } */
+
+.pointer {
+  cursor: pointer;
+}

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CouplesBillManagerAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6bb9dfd4343da33ec1db1755b17e8acbe598d230")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b5302bcc880b797db245f538e91a568ad3528e1f")]
 [assembly: System.Reflection.AssemblyProductAttribute("CouplesBillManagerAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CouplesBillManagerAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

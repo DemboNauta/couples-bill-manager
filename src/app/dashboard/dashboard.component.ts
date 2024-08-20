@@ -2,18 +2,19 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { ItemFormComponent } from './item-form/item-form.component';
 import { TicketManagerComponent } from './ticket-manager/ticket-manager.component';
 import { LastBillsComponent } from './last-bills/last-bills.component';
-import { AuthService } from '../../services/auth/auth.service';
-import { User } from '../../interfaces/user';
-import { ExpensesService } from '../../services/expenses/expenses.service';
+import { AuthService } from '../services/auth/auth.service';
+import { User } from '../interfaces/user';
+import { ExpensesService } from '../services/expenses/expenses.service';
 import { CommonModule } from '@angular/common';
 import { BaseChartDirective } from 'ng2-charts';
 import { ChartData, ChartOptions, ChartType } from 'chart.js';
 import 'chartjs-plugin-datalabels';
+import { BillsGraphsComponent } from './bills-graphs/bills-graphs.component';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [ItemFormComponent, TicketManagerComponent, LastBillsComponent, CommonModule, BaseChartDirective],
+  imports: [ItemFormComponent, TicketManagerComponent, LastBillsComponent, CommonModule, BaseChartDirective, BillsGraphsComponent],
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })

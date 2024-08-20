@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Expense } from '../../../interfaces/expense';
+import { Expense } from '../../interfaces/expense';
 import { DatePipe } from '@angular/common';
-import { ExpensesService } from '../../../services/expenses/expenses.service';
+import { ExpensesService } from '../../services/expenses/expenses.service';
 
 @Component({
   selector: 'app-last-bills',

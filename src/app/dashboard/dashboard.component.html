@@ -1,0 +1,22 @@
+@if(this.loggedInUser)
+{
+<div class="d-flex justify-content-center w-100 mt-3">
+  <div class="w-75 border-1 border-dark-subtle rounded-1 border" id="dashBoard">
+    <h2 class="welcome-message mt-2">Bienvenido, {{this.loggedInUser.userName}}</h2>
+    <div class="p-4 d-flex justify-content-between">
+      <div class="w-75 me-3">
+        <app-last-bills></app-last-bills>
+      </div>
+      <div class="w-25">
+        <app-ticket-manager></app-ticket-manager>
+        <div class="border-1 border-black rounded border mt-2 p-3 h-fit-content">
+          <app-bills-graphs></app-bills-graphs>
+        </div>
+      </div>
+      
+    </div>
+
+  </div>
+</div>
+
+}
